@@ -1,0 +1,501 @@
+{
+  "destinations": [
+    {
+      "id": 1,
+      "name": "Mercury",
+      "routeStatus": {
+        "isOperational": true,
+        "nonOperationalReason": null
+      },
+      "shuttles": [
+        {
+          "id": 1,
+          "name": "Falcon Type XIV",
+          "capacity": 20,
+          "launchpadLocation": "Calgary",
+          "basePrice": "10",
+          "discount": 0,
+          "etd": 190000,
+          "eta": 8000000,
+          "availableSeats": ["1A", "1B", "6B", "7B"]
+        },
+        {
+          "id": 2,
+          "name": "Discovery Class-Ariel",
+          "capacity": 10,
+          "launchpadLocation": "Cabo Verde",
+          "basePrice": "9",
+          "discount": 0,
+          "etd": 180000,
+          "eta": 8200000,
+          "availableSeats": ["1A", "2A", "3A", "4A"]
+        },
+        {
+          "id": 3,
+          "name": "UNSC Infinity",
+          "capacity": 50,
+          "launchpadLocation": "Tenerife",
+          "basePrice": "7",
+          "discount": 0,
+          "etd": 70000,
+          "eta": 8500000,
+          "availableSeats": ["19B"]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Venus",
+      "routeStatus": {
+        "isOperational": true,
+        "nonOperationalReason": null
+      },
+      "shuttles": [
+        {
+          "id": 1,
+          "name": "Serenity 747",
+          "capacity": 20,
+          "launchpadLocation": "Tokyo",
+          "basePrice": "18",
+          "discount": 0,
+          "etd": 300000,
+          "eta": 6000000,
+          "availableSeats": ["1A", "2B", "3B", "7B"]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Mars",
+      "routeStatus": {
+        "isOperational": true,
+        "nonOperationalReason": null
+      },
+      "shuttles": [
+        {
+          "id": 1,
+          "name": "TARDIS",
+          "capacity": 4,
+          "launchpadLocation": "London",
+          "basePrice": "18",
+          "discount": 0,
+          "etd": 250000,
+          "eta": 3000000,
+          "availableSeats": ["1A", "1B", "2A", "2B"]
+        },
+        {
+          "id": 2,
+          "name": "SS Caelestis",
+          "capacity": 10,
+          "launchpadLocation": "Milan",
+          "basePrice": "21",
+          "discount": 0,
+          "etd": 1800000,
+          "eta": 4200000,
+          "availableSeats": ["1A", "2A", "3A", "4A"]
+        },
+        {
+          "id": 3,
+          "name": "SS Patience",
+          "capacity": 300,
+          "launchpadLocation": "Boston",
+          "basePrice": "30",
+          "discount": 0,
+          "etd": 70000,
+          "eta": 8500000,
+          "availableSeats": [
+            "1A",
+            "1B",
+            "2A",
+            "2B",
+            "30A",
+            "31B",
+            "40A",
+            "42B",
+            "57A",
+            "95B"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Jupiter",
+      "routeStatus": {
+        "isOperational": false,
+        "nonOperationalReason": "Electromagnetic storms"
+      },
+      "shuttles": [
+        {
+          "id": 1,
+          "name": "Falcon Type XIV",
+          "capacity": 20,
+          "launchpadLocation": "Calgary",
+          "basePrice": "9",
+          "discount": 0,
+          "etd": 195700,
+          "eta": 20000000,
+          "availableSeats": ["1A", "1B", "6B", "7B"]
+        },
+        {
+          "id": 2,
+          "name": "Discovery Class-Ariel",
+          "capacity": 10,
+          "launchpadLocation": "Cabo Verde",
+          "basePrice": "8",
+          "discount": 0,
+          "etd": 180000,
+          "eta": 20000000,
+          "availableSeats": ["1A", "2A", "3A", "4A"]
+        },
+        {
+          "id": 3,
+          "name": "SS Angelica",
+          "capacity": 50,
+          "launchpadLocation": "Oslo",
+          "basePrice": "5",
+          "discount": 0,
+          "etd": 70000,
+          "eta": 15000000,
+          "availableSeats": ["19B", "18B", "17B", "16B", "15A", "10B"]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Saturn",
+      "routeStatus": {
+        "isOperational": true,
+        "nonOperationalReason": null
+      },
+      "shuttles": [
+        {
+          "id": 1,
+          "name": "Albatross Class-B",
+          "capacity": 20,
+          "launchpadLocation": "Calgary",
+          "basePrice": "7",
+          "discount": 0,
+          "etd": 190000,
+          "eta": 5000000,
+          "availableSeats": [
+            "1A",
+            "1B",
+            "2A",
+            "2B",
+            "6B",
+            "7B",
+            "10A",
+            "11B",
+            "12A",
+            "31B"
+          ]
+        },
+        {
+          "id": 3,
+          "name": "HMS Tortoise",
+          "capacity": 50,
+          "launchpadLocation": "Lisboa",
+          "basePrice": "15",
+          "discount": 0,
+          "etd": 70000,
+          "eta": 8500000,
+          "availableSeats": ["1B", "2B", "4A", "19B"]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Uranus",
+      "routeStatus": {
+        "isOperational": true,
+        "nonOperationalReason": null
+      },
+      "shuttles": [
+        {
+          "id": 1,
+          "name": "Falcon Type XIV",
+          "capacity": 20,
+          "launchpadLocation": "Toronto",
+          "basePrice": "10",
+          "discount": 0,
+          "etd": 490000,
+          "eta": 9000000,
+          "availableSeats": [
+            "1A",
+            "1B",
+            "2A",
+            "2B",
+            "6B",
+            "7B",
+            "10A",
+            "11B",
+            "12A",
+            "31B"
+          ]
+        },
+        {
+          "id": 2,
+          "name": "SS Patience",
+          "capacity": 10,
+          "launchpadLocation": "Cabo Verde",
+          "basePrice": "12",
+          "discount": 0,
+          "etd": 280000,
+          "eta": 9200000,
+          "availableSeats": ["1A", "2A", "3A", "4A"]
+        },
+        {
+          "id": 3,
+          "name": "SS Conga",
+          "capacity": 50,
+          "launchpadLocation": "Valencia",
+          "basePrice": "30",
+          "discount": 0,
+          "etd": 701000,
+          "eta": 8530000,
+          "availableSeats": ["9B"]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Neptune",
+      "routeStatus": {
+        "isOperational": true,
+        "nonOperationalReason": null
+      },
+      "shuttles": [
+        {
+          "id": 1,
+          "name": "Arrow Type XIII",
+          "capacity": 15,
+          "launchpadLocation": "Calgary",
+          "basePrice": "15",
+          "discount": 0,
+          "etd": 90000,
+          "eta": 9000000,
+          "availableSeats": ["1A", "1B", "6B", "7B"]
+        },
+        {
+          "id": 2,
+          "name": "Falcon IX",
+          "capacity": 10,
+          "launchpadLocation": "Sevilla",
+          "basePrice": "14",
+          "discount": 0,
+          "etd": 180000,
+          "eta": 2200000,
+          "availableSeats": ["1A", "2A", "3A", "4A"]
+        },
+        {
+          "id": 3,
+          "name": "UNSC Infinity",
+          "capacity": 50,
+          "launchpadLocation": "Tenerife",
+          "basePrice": "19",
+          "discount": 0,
+          "etd": 70000,
+          "eta": 3500000,
+          "availableSeats": ["19B"]
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Moon",
+      "routeStatus": {
+        "isOperational": true,
+        "nonOperationalReason": null
+      },
+      "shuttles": [
+        {
+          "id": 1,
+          "name": "SS Asturias",
+          "capacity": 200,
+          "launchpadLocation": "Quebec",
+          "basePrice": "2",
+          "discount": 0,
+          "etd": 90000,
+          "eta": 310000,
+          "availableSeats": ["1A", "1B", "6B", "7B"]
+        },
+        {
+          "id": 2,
+          "name": "HMS Oxford",
+          "capacity": 100,
+          "launchpadLocation": "Toulouse",
+          "basePrice": "2",
+          "discount": 0,
+          "etd": 180000,
+          "eta": 300000,
+          "availableSeats": ["1A", "2A", "3A", "4A"]
+        },
+        {
+          "id": 3,
+          "name": "UNSC Orleans",
+          "capacity": 500,
+          "launchpadLocation": "Tenerife",
+          "basePrice": "3",
+          "discount": 0,
+          "etd": 71000,
+          "eta": 200000,
+          "availableSeats": ["1A", "1B", "6B", "7B", "19B"]
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Phobos",
+      "routeStatus": {
+        "isOperational": false,
+        "nonOperationalReason": "Volcanic eruption"
+      },
+      "shuttles": []
+    },
+    {
+      "id": 18,
+      "name": "Europa",
+      "routeStatus": {
+        "isOperational": true,
+        "nonOperationalReason": null
+      },
+      "shuttles": [
+        {
+          "id": 1,
+          "name": "Falcon Type XIV",
+          "capacity": 20,
+          "launchpadLocation": "Calgary",
+          "basePrice": "20",
+          "discount": 0,
+          "etd": 291000,
+          "eta": 8000000,
+          "availableSeats": ["1A", "1B", "6B", "7B"]
+        },
+        {
+          "id": 2,
+          "name": "STS Bastion",
+          "capacity": 100,
+          "launchpadLocation": "Rome",
+          "basePrice": "18",
+          "discount": 0,
+          "etd": 480000,
+          "eta": 8200000,
+          "availableSeats": ["1A", "2A", "3A", "4A"]
+        },
+        {
+          "id": 3,
+          "name": "SS Cordova",
+          "capacity": 50,
+          "launchpadLocation": "Moscow",
+          "basePrice": "10",
+          "discount": 0,
+          "etd": 75100,
+          "eta": 8200000,
+          "availableSeats": ["19B"]
+        }
+      ]
+    }
+  ],
+  "bodies": [
+    {
+      "id": 1,
+      "name": "Mercury",
+      "type": "planet",
+      "star": "Sun",
+      "description": "Mercury—the smallest planet in our solar system and closest to the Sun—is only slightly larger than Earth's Moon. Mercury is the fastest planet, zipping around the Sun every 88 Earth days.",
+      "images": ["http://localhost:3000/img/bodies/mercury.png"]
+    },
+    {
+      "id": 2,
+      "name": "Venus",
+      "type": "planet",
+      "star": "Sun",
+      "description": "Venus spins slowly in the opposite direction from most planets. A thick atmosphere traps heat in a runaway greenhouse effect, making it the hottest planet in our solar system.",
+      "images": [
+        "http://localhost:3000/img/bodies/venus.png"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Mars",
+      "type": "planet",
+      "star": "Sun",
+      "description": "Mars is a dusty, cold, desert world with a very thin atmosphere. There is strong evidence Mars was—billions of years ago—wetter and warmer, with a thicker atmosphere.",
+      "images": [
+        "http://localhost:3000/img/bodies/mars.png"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Jupiter",
+      "type": "planet",
+      "star": "Sun",
+      "description": "Jupiter is more than twice as massive than the other planets of our solar system combined. The giant planet's Great Red spot is a centuries-old storm bigger than Earth.",
+      "images": [
+        "http://localhost:3000/img/bodies/jupiter.png"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Saturn",
+      "type": "planet",
+      "star": "Sun",
+      "description": "Adorned with a dazzling, complex system of icy rings, Saturn is unique in our solar system. The other giant planets have rings, but none are as spectacular as Saturn's.",
+      "images": [
+        "http://localhost:3000/img/bodies/saturn.png"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Uranus",
+      "type": "planet",
+      "star": "Sun",
+      "description": "Uranus—seventh planet from the Sun—rotates at a nearly 90-degree angle from the plane of its orbit. This unique tilt makes Uranus appear to spin on its side.",
+      "images": [
+        "http://localhost:3000/img/bodies/uranus.png"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Neptune",
+      "type": "planet",
+      "star": "Sun",
+      "description": "Neptune—the eighth and most distant major planet orbiting our Sun—is dark, cold and whipped by supersonic winds. It was the first planet located through mathematical calculations, rather than by telescope.",
+      "images": [
+        "http://localhost:3000/img/bodies/neptune.png"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Moon",
+      "type": "moon",
+      "star": "Earth",
+      "description": "Earth's Moon makes our planet more livable by moderating how much it wobbles on its axis.",
+      "images": ["http://localhost:3000/img/bodies/earths_moon.png"]
+    },
+    {
+      "id": 15,
+      "name": "Phobos",
+      "type": "moon",
+      "star": "Mars",
+      "description": "Phobos is the larger of Mars' two moons and is 17 x 14 x 11 miles (27 by 22 by 18 kilometers) in diameter. It orbits Mars three times a day, and is so close to the planet's surface that in some locations on Mars it cannot always be seen.",
+      "images": [
+        "http://localhost:3000/img/bodies/mars_moon.png"
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Europa",
+      "type": "moon",
+      "star": "Jupiter",
+      "description": "Slightly smaller than Earth's Moon, Europa’s water-ice surface is crisscrossed by long, linear fractures, cracks, ridges, and bands. The moon’s ice shell is probably 10 to 15 miles (15 to 25 kilometers) thick, beneath which the ocean is estimated to be 40 to 100 miles (60 to 150 kilometers) deep. Like Earth, Europa is thought to also contain a rocky mantle and iron core.",
+      "images": ["http://localhost:3000/img/bodies/jupiters_moon.png"]
+    }
+  ],
+  "extras": [
+    { "id": 1, "name": "Netflix", "price": "0.0" },
+    { "id": 2, "name": "Gravity seat", "price": "1.99" },
+    { "id": 3, "name": "Space suit", "price": "0.5" }
+  ]
+}
