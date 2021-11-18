@@ -1,48 +1,16 @@
-import React, { ReactNode } from "react"
+import React from "react"
 import Link from "next/link"
-import styled from "@emotion/styled"
-import { Gradient } from "../styles/GenericStyles";
-
-const NavContainer = styled.div`
-	display: flex;
-	position: relative;
-	z-index: 9999;
-	text-align: center;
-	flex-direction: column;
-	justify-content: center;
-	padding-top: 32px;
-`;
-
-const HeaderText = styled.span`
-	font-weight: 100;
-	letter-spacing: 0.1em;
-	font-size: 0.8rem;
-
-	@media (min-width: 1024px) {
-		font-size: 1rem;
-	}
-`;
-
-const CompanyName = styled.div`
-	font-family: Orion;
-	font-weight: bold;
-	font-size: 2.4rem;
-	${Gradient}
-	
-	@media (min-width: 1024px) {
-		font-size: 3.8rem;
-	}
-`;
+import * as s from "../styles/components/Header"
 
 const Header = () => (
-	<NavContainer>
+	<s.NavContainer>
 		<Link href="/">
 			<a>
-				<HeaderText>· SPACE TRAVELLING AGENCY ·</HeaderText>
-				<CompanyName>EARTHFLY</CompanyName>
+				<s.HeaderText>· SPACE TRAVELLING AGENCY ·</s.HeaderText>
+				<s.CompanyName>EARTHFLY</s.CompanyName>
 			</a>
 		</Link>
-	</NavContainer>
+	</s.NavContainer>
 );
 
 export default Header;

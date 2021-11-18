@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import React, { useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 
 const ShuttleLocation = styled.div`

@@ -1,7 +1,6 @@
 import * as Yup from "yup";
 import { Formik } from "formik";
 import React, { ReactElement, useState } from "react";
-import styled from "@emotion/styled";
 import {
 	Check,
 	CheckInput,
@@ -19,106 +18,7 @@ import {
 import { Extra, Shuttle } from "../../utils/types";
 import { usePurchaseContext } from "../../context/PurchaseContext";
 import { useRouter } from "next/dist/client/router";
-
-const FormContainer = styled.div`
-	display: flex;
-	flex-direction: column;
-`;
-
-const FormDetails = styled.div`
-	display: flex;
-	flex-direction: column;
-
-	@media (min-width: 1024px) {
-		flex-direction: row;
-		justify-content: space-between;
-	}
-`;
-
-const FormInputs = styled.div`
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	margin-bottom: 24px;
-
-	@media (min-width: 1024px) {
-		width: 60%;
-		margin-bottom: 0;
-	}
-`;
-
-const FormExtras = styled.div`
-	width: 100%;
-
-	@media (min-width: 1024px) {
-		width: 40%;
-	}
-`;
-
-const ExtrasHeading = styled.span`
-	display: block;
-	margin-bottom: 24px;
-`;
-
-const ExtrasContainer = styled.div`
-	display: flex;
-	flex-direction: column;
-`;
-
-const ExtraInner = styled.div`
-	display: flex;
-	max-width: 500px;
-	justify-content: space-between;
-	align-items: center;
-
-	&:not(:last-child) {
-		margin-bottom: 18px;
-	}
-`;
-
-const ExtraCheckbox = styled.div`
-	display: flex;
-	align-items: center;
-`;
-
-const ExtraName = styled.label`
-	margin-left: 20px;
-	cursor: pointer;
-`;
-
-type PriceNumber = {
-	price: number;
-};
-const ExtraPrice = styled.span<PriceNumber>`
-	${(props) => (props.price === 0 ? "color: #9BD0BE;" : "")}
-`;
-
-const FormFooter = styled.div`
-	display: flex;
-	flex-direction: column;
-
-	@media (min-width: 1024px) {
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
-	}
-`;
-
-const SubmitButton = styled.button`
-	color: #0e0e0e;
-	padding: 8px 32px;
-	border: none;
-	outline: none;
-	font-size: 1.5rem;
-	font-weight: bold;
-	background-color: #ffc400;
-	border-radius: 2px;
-	cursor: pointer;
-
-	@media (max-width: 1024px) {
-		margin-top: 16px;
-	}
-`;
+import * as s from "../../styles/components/Shuttles/Form";
 
 export type FormValues = {
 	name: string;
@@ -150,7 +50,7 @@ interface Props {
 const Form = ({ shuttle, extras }: Props): ReactElement => {
 	const router = useRouter();
 	const [price, setPrice] = useState<number>(Number(shuttle.basePrice));
-	const { data, updatePurchaseData } = usePurchaseContext();
+	const { updatePurchaseData } = usePurchaseContext();
 
 	const calcPrice = (
 		event: React.ChangeEvent<HTMLInputElement>,
@@ -162,7 +62,7 @@ const Form = ({ shuttle, extras }: Props): ReactElement => {
 
 	const submitForm = (values: FormValues) => {
 		updatePurchaseData(values, shuttle, price);
-		router.push('/purchase');
+		router.push("/purchase");
 	};
 	return (
 		<Formik
@@ -173,13 +73,13 @@ const Form = ({ shuttle, extras }: Props): ReactElement => {
 			validationSchema={shoppingSchema}
 		>
 			{(formik) => {
-				const { values, handleChange, handleSubmit, errors, handleBlur } = 
+				const { values, handleChange, handleSubmit, errors, handleBlur } =
 					formik;
 				return (
 					<form noValidate onSubmit={handleSubmit}>
-						<FormContainer>
-							<FormDetails>
-								<FormInputs>
+						<s.FormContainer>
+							<s.FormDetails>
+								<s.FormInputs>
 									<InputContainer>
 										<InputLabel htmlFor="name">Name</InputLabel>
 										<TextInput
@@ -223,13 +123,13 @@ const Form = ({ shuttle, extras }: Props): ReactElement => {
 
 										{errors.seat && <Error>{errors.seat}</Error>}
 									</InputContainer>
-								</FormInputs>
-								<FormExtras>
-									<ExtrasHeading>Choose some extras</ExtrasHeading>
-									<ExtrasContainer>
+								</s.FormInputs>
+								<s.FormExtras>
+									<s.ExtrasHeading>Choose some extras</s.ExtrasHeading>
+									<s.ExtrasContainer>
 										{extras.map((extra, key) => (
-											<ExtraInner key={key}>
-												<ExtraCheckbox>
+											<s.ExtraInner key={key}>
+												<s.ExtraCheckbox>
 													<CheckInputContainer type="checkbox">
 														<CheckInput
 															type="checkbox"
@@ -243,24 +143,24 @@ const Form = ({ shuttle, extras }: Props): ReactElement => {
 														></CheckInput>
 														<Check></Check>
 													</CheckInputContainer>
-													<ExtraName htmlFor={`extra_${extra.name}`}>
+													<s.ExtraName htmlFor={`extra_${extra.name}`}>
 														{extra.name}
-													</ExtraName>
-												</ExtraCheckbox>
-												<ExtraPrice price={Number(extra.price)}>
+													</s.ExtraName>
+												</s.ExtraCheckbox>
+												<s.ExtraPrice price={Number(extra.price)}>
 													{Number(extra.price) > 0 ? `${extra.price}₿` : "Free"}
-												</ExtraPrice>
-											</ExtraInner>
+												</s.ExtraPrice>
+											</s.ExtraInner>
 										))}
-									</ExtrasContainer>
-								</FormExtras>
-							</FormDetails>
+									</s.ExtrasContainer>
+								</s.FormExtras>
+							</s.FormDetails>
 							<Separator />
-							<FormFooter>
+							<s.FormFooter>
 								<Price>Total: {price}₿</Price>
-								<SubmitButton type="submit">Buy now</SubmitButton>
-							</FormFooter>
-						</FormContainer>
+								<s.SubmitButton type="submit">Buy now</s.SubmitButton>
+							</s.FormFooter>
+						</s.FormContainer>
 					</form>
 				);
 			}}
