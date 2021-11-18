@@ -175,3 +175,28 @@ export const Error = styled.p`
 	margin: 8px 0;
 	color: #ff535d;
 `;
+
+export const H2 = styled.h2`
+	text-align: center;
+	width: 100%;
+	font-family: Orion;
+	font-weight: bold;
+	font-size: 2.4rem;
+	${Gradient}
+	@media (min-width: 1024px) {
+		font-size: 3.8rem;
+	}
+`;
+
+export const Price = styled.h2`
+	font-size: 1.2rem;
+	font-weight: normal;
+	line-height: 1;
+	margin: 8px 0;
+	color: #ffc400;
+
+	@media (min-width: 1024px) {
+		font-size: 1.5rem;
+		font-weight: bold;
+	}
+`;

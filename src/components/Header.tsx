@@ -5,6 +5,8 @@ import { Gradient } from "../styles/GenericStyles";
 
 const NavContainer = styled.div`
 	display: flex;
+	position: relative;
+	z-index: 9999;
 	text-align: center;
 	flex-direction: column;
 	justify-content: center;

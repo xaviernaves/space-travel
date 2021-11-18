@@ -9,6 +9,7 @@ import {
 	Error,
 	InputContainer,
 	InputLabel,
+	Price,
 	SelectContainer,
 	SelectInput,
 	SelectOption,
@@ -16,6 +17,8 @@ import {
 	TextInput,
 } from "../../styles/GenericStyles";
 import { Extra, Shuttle } from "../../utils/types";
+import { usePurchaseContext } from "../../context/PurchaseContext";
+import { useRouter } from "next/dist/client/router";
 
 const FormContainer = styled.div`
 	display: flex;
@@ -101,17 +104,6 @@ const FormFooter = styled.div`
 	}
 `;
 
-const Price = styled.h2`
-	font-size: 1.2rem;
-	line-height: 1;
-	margin: 8px 0;
-	color: #ffc400;
-
-	@media (min-width: 1024px) {
-		font-size: 1.5;
-	}
-`;
-
 const SubmitButton = styled.button`
 	color: #0e0e0e;
 	padding: 8px 32px;
@@ -128,11 +120,11 @@ const SubmitButton = styled.button`
 	}
 `;
 
-type FormValues = {
+export type FormValues = {
 	name: string;
 	surname: string;
 	seat: string;
-	extras: [];
+	extras: string[];
 };
 
 const initialValues: FormValues = {
@@ -156,18 +148,21 @@ interface Props {
 }
 
 const Form = ({ shuttle, extras }: Props): ReactElement => {
+	const router = useRouter();
 	const [price, setPrice] = useState<number>(Number(shuttle.basePrice));
+	const { data, updatePurchaseData } = usePurchaseContext();
 
 	const calcPrice = (
-		e: React.ChangeEvent<HTMLInputElement>,
+		event: React.ChangeEvent<HTMLInputElement>,
 		extra_price: string
 	) => {
-		if (e.target.checked) setPrice(price + Number(extra_price));
+		if (event.target.checked) setPrice(price + Number(extra_price));
 		else setPrice(price - Number(extra_price));
 	};
 
 	const submitForm = (values: FormValues) => {
-		console.log(values, shuttle, price);
+		updatePurchaseData(values, shuttle, price);
+		router.push('/purchase');
 	};
 	return (
 		<Formik
@@ -197,7 +192,7 @@ const Form = ({ shuttle, extras }: Props): ReactElement => {
 										{errors.name && <Error>{errors.name}</Error>}
 									</InputContainer>
 									<InputContainer style={{ marginTop: 16 }}>
-										<InputLabel htmlFor="surname">Surame</InputLabel>
+										<InputLabel htmlFor="surname">Surname</InputLabel>
 										<TextInput
 											name="surname"
 											id="surname"
@@ -215,7 +210,6 @@ const Form = ({ shuttle, extras }: Props): ReactElement => {
 												name="seat"
 												value={values.seat}
 												onChange={handleChange}
-												onBlur={handleBlur}
 												required
 											>
 												<SelectOption value="">Select a seat</SelectOption>
@@ -240,8 +234,8 @@ const Form = ({ shuttle, extras }: Props): ReactElement => {
 														<CheckInput
 															type="checkbox"
 															name="extras"
-															id={`extra_${extra.id}`}
-															value={extra.id}
+															id={`extra_${extra.name}`}
+															value={extra.name}
 															onChange={(e) => {
 																handleChange(e);
 																calcPrice(e, extra.price);
@@ -249,7 +243,7 @@ const Form = ({ shuttle, extras }: Props): ReactElement => {
 														></CheckInput>
 														<Check></Check>
 													</CheckInputContainer>
-													<ExtraName htmlFor={`extra_${extra.id}`}>
+													<ExtraName htmlFor={`extra_${extra.name}`}>
 														{extra.name}
 													</ExtraName>
 												</ExtraCheckbox>

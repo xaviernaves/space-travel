@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import styled from "@emotion/styled";
 import Header from "../components/Header";
+import { PurchaseProvider } from "../context/PurchaseContext";
 
 const Wrapper = styled.div`
 	height: 100%;
@@ -17,11 +18,13 @@ const Wrapper = styled.div`
 
 const App = ({ Component, pageProps }: AppProps) => {
 	return (
-		<Wrapper>
-			<Header/>
-			<Component {...pageProps} />
-		</Wrapper>
+		<PurchaseProvider>
+			<Wrapper>
+				<Header />
+				<Component {...pageProps} />
+			</Wrapper>
+		</PurchaseProvider>
 	);
-}
+};
 
 export default App;

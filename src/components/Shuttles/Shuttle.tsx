@@ -10,6 +10,7 @@ import { Extra, Shuttle } from "../../utils/types";
 import Form from "./Form";
 import Image from "next/image";
 import Clock from "../Clock";
+import Location from "../Location";
 
 type ShuttleSelected = {
 	selected: boolean;
@@ -110,7 +111,7 @@ const ShuttleTime = styled.div`
 	}
 
 	@media (max-width: 1024px) {
-		& > span:first-child {
+		& > span:first-of-type {
 			margin-bottom: 8px;
 		}
 	}
@@ -123,15 +124,6 @@ const ShuttleLocationContainer = styled.div<{ desktop: boolean }>`
 		display: ${(props) => (props.desktop ? "none" : "block")};
 		margin: 16px 0;
 	}
-`;
-
-const ShuttleLocation = styled.div`
-	display: flex;
-	align-items: center;
-`;
-
-const LocationName = styled.div`
-	margin-left: 9px;
 `;
 
 interface Props {
@@ -185,15 +177,7 @@ const Shuttle = ({
 					</ShuttleInfoLeft>
 
 					<ShuttleLocationContainer desktop={true}>
-						<ShuttleLocation>
-							<Image
-								src="/location.svg"
-								width="20"
-								height="20"
-								alt="location"
-							/>
-							<LocationName>{shuttle.launchpadLocation}</LocationName>
-						</ShuttleLocation>
+						<Location location={shuttle.launchpadLocation}></Location>
 					</ShuttleLocationContainer>
 				</ShuttleInfo>
 			</ShuttleHeader>
@@ -210,10 +194,7 @@ const Shuttle = ({
 			</ShuttleTime>
 
 			<ShuttleLocationContainer desktop={false}>
-				<ShuttleLocation>
-					<Image src="/location.svg" width="20" height="20" alt="location" />
-					<LocationName>{shuttle.launchpadLocation}</LocationName>
-				</ShuttleLocation>
+				<Location location={shuttle.launchpadLocation}></Location>
 			</ShuttleLocationContainer>
 
 			{selected && (
