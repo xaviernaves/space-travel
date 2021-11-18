@@ -39,7 +39,7 @@
           "discount": 0,
           "etd": 70000,
           "eta": 8500000,
-          "availableSeats": ["19B"]
+          "availableSeats": []
         }
       ]
     },

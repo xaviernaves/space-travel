@@ -28,3 +28,9 @@ export interface Shuttle {
 	eta: number; // Estimated Time for Arrival
 	availableSeats: string[];
 }
+
+export interface Extra {
+	id: number;
+	name: string;
+	price: string;
+}

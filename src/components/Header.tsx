@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react"
 import Link from "next/link"
 import styled from "@emotion/styled"
+import { Gradient } from "../styles/GenericStyles";
 
 const NavContainer = styled.div`
 	display: flex;
@@ -24,13 +25,8 @@ const CompanyName = styled.div`
 	font-family: Orion;
 	font-weight: bold;
 	font-size: 2.4rem;
-	background: linear-gradient(90deg, #ffffff 0%, #fff3f0 40%, #ff3d00 70%);
-	background-size: 100%;
-	-webkit-background-clip: text;
-	-moz-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	-moz-text-fill-color: transparent;
-
+	${Gradient}
+	
 	@media (min-width: 1024px) {
 		font-size: 3.8rem;
 	}

@@ -2,9 +2,10 @@ import styled from "@emotion/styled";
 import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import { API_URL } from "../utils/consts";
-import { LegacyRef, useRef, useState } from "react";
+import { LegacyRef, useRef } from "react";
 import { Destination } from "../utils/types";
 import PlanetCard from "../components/PlanetCard";
+import { Gradient } from "../styles/GenericStyles";
 
 const HeaderText = styled.span`
 	font-weight: 100;
@@ -93,12 +94,7 @@ const Headline = styled.h1`
 	font-family: Orion;
 	font-size: 4.7rem;
 	font-weight: bold;
-	background: linear-gradient(90deg, #ffffff 0%, #fff3f0 40%, #ff3d00 70%);
-	background-size: 100%;
-	-webkit-background-clip: text;
-	-moz-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	-moz-text-fill-color: transparent;
+	${Gradient}
 
 	width: 100%;
 	letter-spacing: 0.05em;
